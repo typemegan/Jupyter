@@ -1,0 +1,7 @@
+*.pyc
+*.swp
+*.egg-info
+commit.sh
+/run
+.ipynb_checkpoints
+.idea
