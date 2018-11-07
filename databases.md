@@ -1,6 +1,8 @@
 # 数据库
 * [MySQL vs MongoDB](#compare)
 
+> Resources:   
+ [NoSQL Databases Explained](https://www.mongodb.com/nosql-explained?jmp=footer)
 
 
 ## <a id="compare">MySQL vs MongoDB</a>
@@ -9,7 +11,7 @@
 > 分布式存储  
 > 3C
 
-* [Mongodb 与 MySQL对比](https://www.cnblogs.com/web-fusheng/p/6884759.html){:target="_blank"}
+* [Mongodb 与 MySQL对比](https://www.cnblogs.com/web-fusheng/p/6884759.html)
 
 **主键(_id)影响:**
 
