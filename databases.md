@@ -6,9 +6,10 @@
 ## <a id="compare">MySQL vs MongoDB</a>
 
 > 事务关系支持？    
-> 分布式存储
+> 分布式存储  
+> 3C
 
-* [Mongodb 与 MySQL对比](https://www.cnblogs.com/web-fusheng/p/6884759.html)  
+* [Mongodb 与 MySQL对比](https://www.cnblogs.com/web-fusheng/p/6884759.html){:target="_blank"}
 
 **主键(_id)影响:**
 
