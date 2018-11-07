@@ -1,11 +1,22 @@
 
-## 参考
+# Markdown语法
+> + [参考](#reference)
++ [标题](#header)
++ [字体格式](#format)
++ [链接](#link)
++ [图片](#picture)
++ [注释](#footnote)
++ [段落](#paragraph)
++ [列表](#list)
++ [表格](#table)
+
+## <a id='reference'>参考</a>
 - [commonmark.org: 入门+测试](https://commonmark.org/help/)
 - [Formatting your text with Markdown](https://www.pivotaltracker.com/help/articles/formatting_your_text_with_markdown/)
 - [Markdown quick reference](https://en.support.wordpress.com/markdown-quick-reference/)
 
 
-## 标题：
+## <a id='header'>标题:</a>
 # headline1
 ## headline2
 ### headline3
@@ -22,7 +33,7 @@ headline2
 ---
 *** 
 
-## 字体格式：
+## <a id='format'>字体格式：</a>
 
 **bold**  
 __strong__  
@@ -40,7 +51,7 @@ A*maz*ing  (局部强调)
 <mark>高亮</mark>  
 <span style="background-color:red">高亮</span>
  
-## 链接
+## <a id='link'>链接</a>
 [本地链接](#paragraph)  
 
 [网页链接](https://macdown.uranusjr.com/)   
@@ -49,7 +60,7 @@ A*maz*ing  (局部强调)
 [2]:https://www.slideshare.net/
 
 
-## 图片
+## <a id='picture'>图片</a>
 ![alt text, 可以为空](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNqCaZ7HmfqsbZh-KEQCiFlW8QTt_OBgvCQRbGOA8OLmMjWpYzng) [显示链接图片，不显示链接信息，也不可跳转]    
 
 ![](../imgs/hellokitty_48px.png) [插入本地图片]   
@@ -59,7 +70,7 @@ A*maz*ing  (局部强调)
 [img_index]:../imgs/hellokitty_48px.png "图片标题，可以为空"
 
 
-## Footnotes(注释)
+## <a id='footnote'>Footnotes(注释)</a>
 李白[^李白]与杜甫[^杜甫]   
 [^李白]: 李白，唐代诗人
 [^杜甫]: 杜甫，唐代诗人
@@ -105,7 +116,7 @@ print()
 x = 12
 ```
 
-#### 列表：
+## <a id='list'>列表：</a>
 * 无序
 * 无序
 - 无序
@@ -122,7 +133,7 @@ x = 12
 1989\. [转义后]
 
 
-## 表格
+## <a id='table'>表格</a>
 列1 | 列2
 --- |----
 1   | 2 
