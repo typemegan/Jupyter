@@ -1,8 +1,8 @@
 
 # Markdown语法
-> + [参考](#reference)
-+ [标题](#header)
-+ [字体格式](#format)
+[参考](#reference)
+> + [标题](#header)
++ [字体格式](#format) [粗体，斜体，下划线，删除线，上标，下标，高亮]
 + [链接](#link)
 + [图片](#picture)
 + [注释](#footnote)
@@ -49,7 +49,8 @@ A*maz*ing  (局部强调)
 <del>删除线</del>  
 ~~strike through~~ [删除线，显然在Markdown里没有该效果]   
 <mark>高亮</mark>  
-<span style="background-color:red">高亮</span>
+<span style="background-color:red">高亮</span>  
+==高亮== 
  
 ## <a id='link'>链接</a>
 [本地链接](#paragraph)  
@@ -63,6 +64,8 @@ A*maz*ing  (局部强调)
 ## <a id='picture'>图片</a>
 ![alt text, 可以为空](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNqCaZ7HmfqsbZh-KEQCiFlW8QTt_OBgvCQRbGOA8OLmMjWpYzng) [显示链接图片，不显示链接信息，也不可跳转]    
 
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNqCaZ7HmfqsbZh-KEQCiFlW8QTt_OBgvCQRbGOA8OLmMjWpYzng" width="50" height="60"> [设置显示的图片大小]    
+
 ![](../imgs/hellokitty_48px.png) [插入本地图片]   
 <img src="../imgs/hellokitty_48px.png"> [插入本地图片]
 
@@ -71,9 +74,11 @@ A*maz*ing  (局部强调)
 
 
 ## <a id='footnote'>Footnotes(注释)</a>
-李白[^李白]与杜甫[^杜甫]   
+李白[^李白]与杜甫[^杜甫] 唐诗[^李白] [貌似一个注释只能用在一处]
+
 [^李白]: 李白，唐代诗人
-[^杜甫]: 杜甫，唐代诗人
+[^杜甫]: 杜甫，唐代诗人   
+[^辛弃疾]: 宋代
 
 ## <a id='paragraph'>段落</a>
 
