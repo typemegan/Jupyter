@@ -29,6 +29,7 @@
 - [Flags](#flag)
 - [各软件/编程语言中的正则表达式](#tool)
 	- [egrep](#egrep)
+	- [perl](#perl)
 - [示例](#examples)
 	- [找出任意重复单词](#repeate)
 	- [匹配双引号内的字符串](#quote) [==待解:字符串内包含\\"的情况==]
