@@ -232,12 +232,20 @@ Regex | 意义
 > 忽略大小写: `$ egrep -i 'regex' files`
 
 ## <a id='perl'>Perl
-Perl 是一门编程语言，其正则表达式功能强大，可以在一行命令中执行任意perl代码  
-[Linux perl command overview](https://www.computerhope.com/unix/uperl.htm)  
-[Perl-one Liners](https://www.rexegg.com/regex-perl-one-liners.html)  
+>Perl 是一门解释型语言，具有强大的文本处理功能；  
+执行Perl代码，可以在命令行中通过perl解释器: $ perl 脚本，  
+或者在命令行中指定代码执行 $ perl -e ‘代码’ --> **Perl-one Liners**
+结合Perl-one Liners + 其内部支持的强大Regex，可以一行命令就执行各种文本处理   
+  
+🔎[Linux perl command overview](https://www.computerhope.com/unix/uperl.htm)  
+🔎[Perl-one Liners](https://www.rexegg.com/regex-perl-one-liners.html)  
+
 ### 一行Perl命令(Perl-one Liners, 正则匹配/替换/分割）
+
+`perl  -e 'print "hello"'`  
 `$ perl -e 'code' file1 file2 ...`  
 `$ echo $filepath | perl -e 'code'`
+
 > 命令参数：  
 > -e 'perl code': 指定要执行的perl代码  
 > -n: 将file文件内容逐行输给代码执行  
