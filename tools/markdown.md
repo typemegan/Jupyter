@@ -37,9 +37,10 @@ headline2
 
 **bold**  
 __strong__  
-_斜写_  
 *斜写*  
+_下划线_   
 <u>下划线</u>  
+*_斜写+下划线_*  
 hello<sup>上标</sup>   
 hello<sub>下标</sub>   
 [^4]footnotes[^4]
