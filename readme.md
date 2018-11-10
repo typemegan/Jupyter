@@ -6,7 +6,12 @@
 
 
 ## Progresses
+### Programs
 - Python: <progress max=100 value=50>
+- Flask: <progress max=100 value=5>
 - Regex: <progress max=100 value=10>
-- Docker: <progress max=100 value=0>
 - Algorithms: <progress max=100 value=20>
+
+### OPs
+- Docker: <progress max=100 value=5>
+- AWS: <progress max=100 value=50>
