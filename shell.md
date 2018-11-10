@@ -1,8 +1,7 @@
 # Shell
 
 ## Todo
-<input type='checkbox' checked> 单引号与双引号  
-- [ ] hello
+- [x] 单引号与双引号  
 
 
 ## 单引号vs双引号
