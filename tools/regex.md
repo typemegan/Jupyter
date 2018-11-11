@@ -11,7 +11,8 @@
 **问题:**
 
 1. 在Apache服务器的Rewrite规则中，怎样以一个正则表达式匹配“除两个特定子域名之外的所有其他子域名“
-2. 修复HTML中未闭合的tag
+2. 修复HTML中未闭合的tag -> 如何匹配不包含的字符串，<a>与<a>之间不包含</a>
+
 
 [参考](#reference)   
 >
@@ -60,6 +61,7 @@
 - [Python3.6: re — Regular expression operations](https://docs.python.org/3.6/library/re.html)
 - [Rexegg](https://www.rexegg.com/)
 - [Mastering Regular Expressions Errata](http://regex.info/errata3.html)
+- [Regex Pattern Matching in Programming Languages](http://www.cs.columbia.edu/~aho/cs6998/Lectures/14-10-13_Wang_RE.pdf)[复习用]
 
   
 ## <a id='general'>概要   
@@ -393,11 +395,24 @@ Regex | 意义
 > 🤔`\D`是否等同于`(?!\d)` ？  
 > 前者匹配的是字符，后者匹配的位置(否定环视不要求存在字符)   
 > 🤔不用逆序环视只用顺序环视如何解决？  
-> `s/(\d)(?=(\d\d\d)+(?!\d))/$1,/g`
-> 
+> `s/(\d)(?=(\d\d\d)+(?!\d))/$1,/g`  
+> 🤔如果连顺序环视都不用，要如何实现？(见原书👉68)
 
 
 ## <a id='hard'>🧠绞尽脑汁</a>
 ### <a id='greedy_capture'>分组+贪婪匹配中的捕获过程</a>
 >![](../imgs/regex_greedy_vs_capture.png)
 >这样的捕获一般用不上, 为避免污染其他捕获，可以忽略掉: `(?:-\d\d\d)+`
+
+### <a id='multi-line'>多行匹配模式</a>
+> `^`和`$`实际匹配的是要匹配对象(整个string，包括换行符)的首尾；  
+> 在多行模式(an enhanced line anchor match mode, Flag的一种, 不属于Regex, Perl中为/m, Java为Pattern.MULTILINE)下，`^`和`$`匹配文本各行的首尾；    
+> ==m modifier==: multi line. Causes ^ and $ to match the begin/end of each line (not only begin/end of string)  
+
+#### `/^$/m`  
+> Perl多行模式下匹配空行（不包括空格符）;  
+> <img src='../imgs/regex_multiline_mode.png' height=350 width=500>
+
+#### `/^\s*$/m`  
+> 多行模式下匹配空行(包括空格符)，但`\n`也算`\s`，所以该regex除了匹配可能包含空格符的空行，还匹配了换行符自身，多行模式对此无能无力；`s/^\s*$/p/mg`的结果是将多个连续空行替换成`p`;  
+> <img src='../imgs/regex_multiline_greedy.png' height=350 width=500>
