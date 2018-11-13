@@ -5,3 +5,4 @@ commit.sh
 /run
 .ipynb_checkpoints
 .idea
+__pycache__/
