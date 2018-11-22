@@ -6,3 +6,4 @@ commit.sh
 .ipynb_checkpoints
 .idea
 __pycache__/
+Pipfile

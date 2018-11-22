@@ -46,11 +46,12 @@
 		- [相关语法](#perl-syntax)
 - [💡示例](#examples)
 	- [找出任意重复单词](#repeate)
-	- [匹配双引号内的字符串](#quote) [==待解:字符串内包含\\"的情况==]
+	- [匹配双引号内的字符串](#quote) [<mark>待解:字符串内包含\\"的情况</mark>]
 	- [匹配24小时制时间](#time)
 	- [保留2位小数](#preserve)
 	- [在Jeffs中添加逗号->Jeff's](#jeffs)
 	- [给数值添加逗号](#num-dot)
+- [💣雷区](#mine)
 - [🧠绞尽脑汁](#hard)
 	- [分组+贪婪匹配中的捕获过程](#greedy_capture)
 	- [多行匹配模式](#multi-line)
@@ -80,7 +81,7 @@
 
 
 ## <a id='tip'>Tips
-### <a id='easy'>复杂性与完整性之间的权衡
+### <a id='easy'>复杂性与完整性之间的权衡</a>
 >
 对于 12-33-90，12/33/90, 12.33.90  
 regex1: `12.33.90`  
@@ -91,16 +92,16 @@ regex1则简单易懂些，但会匹配除此以外的情况，e.g: 12033990
 即：匹配符合要求的文本，同时忽略不符合要求的文本  
 如果清楚文本不会出现预期之外的情况，则使用regex1就可以了  
 
-### <a id='unable'>正则表达式的局限性
+### <a id='unable'>正则表达式的局限性</a>
 见用例:['找出任意重复单词'](#repeate)
 
    
-## <a id='meta'>Regex的元字符(Standard Regex)   
+## <a id='meta'>Regex的元字符(Standard Regex)</a>   
 **元字符(metacharacter) / 元字符序列(metasequences)**:  一个字符或字符组合，预留，类似于编程语言中关键字，表示某一操作，e.g. \n表示换新行, ^表示从行首开始。要将元字符作为普通字符使用，需要'\'对其进行转义。
 
 **普通字符**: 非元字符，注意：空格也是普通字符
 
-### <a id='location'>锚定(Anchors and Boundaries)
+### <a id='location'>锚定(Anchors and Boundaries)</a>
 >
 元字符 | 意义 | 说明
 ------|-----|----
@@ -126,7 +127,7 @@ $ | 从行尾开始
 > `(?<!\w)(?=\w)|(?<=\w)(?!\w)` 等同于 `\b`
 
 
-### <a id='classes'>字符类别(Character Classes)
+### <a id='classes'>字符类别(Character Classes)</a>
 >
 元字符 | 意义 | 说明
 ---|---|---
@@ -138,7 +139,7 @@ $ | 从行尾开始
 \w | 匹配单词字符：字母、数字和下划线 | 等同于`[a-zA-Z0-9_]`
 \W | 匹配非单词字符 | 包括\s和部分\S
 
-### <a id='white'>特殊空白符
+### <a id='white'>特殊空白符</a>
 >
 元字符 | 意义 | 说明
 -----| -----|-----
@@ -149,7 +150,7 @@ $ | 从行尾开始
 \f | a form feed, 进纸符
 \b | 退格符
 
-### <a id='times'>匹配次数(Quantifiers)
+### <a id='times'>匹配次数(Quantifiers)</a>
 >
 元字符 | 意义 | 说明
 ---  | ---- | ----
@@ -163,7 +164,7 @@ $ | 从行尾开始
 > 量词正常情况下都是匹配优先(greedy,贪婪匹配)，匹配尽可能多的内容  
 > 忽略优先的量词会匹配尽可能少的内容，只需满足下限，匹配就能成功
 
-#### <a id='greedy'>贪婪匹配：
+#### <a id='greedy'>贪婪匹配：</a>
 ```
 *?, +?, ??   
 The '*', '+', and '?' qualifiers are all greedy; they match as much text as possible. 
@@ -179,7 +180,7 @@ e.g. 匹配HTML的tag标签<xxx>：
 `<.*>` 会匹配 `<I>short</I>` 而不单单是`<I>`和`</I>`,  
 因为`.*`会进行贪婪匹配
 
-### <a id='sets'>字符组(Charater Sets and Ranges)
+### <a id='sets'>字符组(Charater Sets and Ranges)</a>
 > **注：在字符组内部和外部，关于元字符的规定是不同的，   
 > e.g.点号'.'在字符组内为普通字符，在字符组外为元字符（代表除newline外的任意字符）**  
 > 
@@ -346,7 +347,7 @@ Regex | 意义
 `<\b>http[s]?://[^\s]+\.htm[l]?<\b>` | 匹配HTTP/HTML URL, 特点:url中不存在空格
 
 
-### <a id='repeate'>✍️找出任意重复单词，e.g: word word，应用场景:检查重复输入
+### <a id='repeate'>✍️找出任意重复单词，e.g: word word，应用场景:检查重复输入</a>
 `\b([a-zA-Z]+) +\1\b`  
 或 `\b(\w+)\s+\1\b`   
 >局限性：  
@@ -357,6 +358,7 @@ Regex | 意义
 >
 1、字符串不包含双引号的情况：  
 `"[^"]*"` 匹配双引号内除引号之外的字符任意次   
+<mark>注意: `[^"]`可以匹配换行符`\n`</mark>
 
 > 2、字符串中包含双引号的情况(带\转义)，e.g.: "what about \\"x4\\"?"
 
